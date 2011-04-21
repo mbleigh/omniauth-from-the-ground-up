@@ -1,2 +1,5 @@
 hell_yeah/tmp
 hell_yeah/.powenv
+hell_yeah/db/*.sqlite3
+hell_yeah/tmp/*
+hell_yeah/log/*.log

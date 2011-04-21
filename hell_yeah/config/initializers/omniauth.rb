@@ -1,11 +1,7 @@
 require 'dev_strategy'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  if Rails.env == 'development'
-    provider :dev
-  else
-    provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
-  end
+  provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
 end
 
 OmniAuth.configure do |config|
