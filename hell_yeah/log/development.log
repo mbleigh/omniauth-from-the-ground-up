@@ -762,3 +762,1295 @@ Started GET "/" for 127.0.0.1 at 2011-04-21 03:14:36 -0500
 Rendered statements/_statement.html.erb (37.8ms)
 Rendered statements/index.html.erb within layouts/application (40.8ms)
 Completed 200 OK in 92ms (Views: 44.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:19:26 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.5ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (50.1ms)
+Rendered statements/index.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 105ms (Views: 57.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "//" for 127.0.0.1 at 2011-04-21 03:19:30 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.5ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (72.8ms)
+Rendered statements/index.html.erb within layouts/application (76.2ms)
+Completed 200 OK in 93ms (Views: 80.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/a" for 127.0.0.1 at 2011-04-21 03:19:30 -0500
+
+ActionController::RoutingError (No route matches "/a"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/auth/" for 127.0.0.1 at 2011-04-21 03:19:30 -0500
+
+ActionController::RoutingError (No route matches "/auth"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/auth/twi" for 127.0.0.1 at 2011-04-21 03:19:31 -0500
+
+ActionController::RoutingError (No route matches "/auth/twi"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:19:31 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=XfsPmoR73YFOdNcMTHSEoDanvSLNUJ1d61xnX2pv6M&oauth_verifier=jNs31vmnmxD1Sp78enzNDn0DOFSphmsHLXsCCkwWe3g" for 127.0.0.1 at 2011-04-21 03:19:32 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"XfsPmoR73YFOdNcMTHSEoDanvSLNUJ1d61xnX2pv6M", "oauth_verifier"=>"jNs31vmnmxD1Sp78enzNDn0DOFSphmsHLXsCCkwWe3g", "provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1[0m
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 1) LIMIT 1[0m
+Redirected to http://hell-yeah.dev/statements/1
+Completed 302 Found in 74ms
+
+
+Started GET "/statements/1" for 127.0.0.1 at 2011-04-21 03:19:33 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+Rendered statements/_statement.html.erb (82.6ms)
+Rendered statements/show.html.erb within layouts/application (114.6ms)
+Completed 200 OK in 137ms (Views: 118.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statements/1" for 127.0.0.1 at 2011-04-21 03:20:20 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+Rendered statements/_statement.html.erb (31.7ms)
+Rendered statements/show.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 56ms (Views: 43.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/a" for 127.0.0.1 at 2011-04-21 03:20:24 -0500
+
+ActionController::RoutingError (No route matches "/a"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/au" for 127.0.0.1 at 2011-04-21 03:20:24 -0500
+
+ActionController::RoutingError (No route matches "/au"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:20:24 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (39.9ms)
+Rendered statements/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 58ms (Views: 46.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/auth/" for 127.0.0.1 at 2011-04-21 03:20:25 -0500
+
+ActionController::RoutingError (No route matches "/auth"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:20:26 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=bOoSUujj1sUUNf1DMp7czFANqRZVmU8X3U1bYqy38&oauth_verifier=dUcEBtyPxagrKXI4s1AkgC5JSVXmIcz6EcNyFZkmDao" for 127.0.0.1 at 2011-04-21 03:20:27 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"bOoSUujj1sUUNf1DMp7czFANqRZVmU8X3U1bYqy38", "oauth_verifier"=>"dUcEBtyPxagrKXI4s1AkgC5JSVXmIcz6EcNyFZkmDao", "provider"=>"twitter"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1[0m
+  [1m[35mVote Load (0.2ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 1) LIMIT 1
+Redirected to http://hell-yeah.dev/statements/1
+Completed 302 Found in 100ms
+
+
+Started GET "/statements/1" for 127.0.0.1 at 2011-04-21 03:20:28 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+Rendered statements/_statement.html.erb (89.6ms)
+Rendered statements/show.html.erb within layouts/application (98.3ms)
+Completed 200 OK in 116ms (Views: 102.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:20:44 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=MEmeMqch0ObeDDZRhvDbrVh3N3JtYIqVN16qj2RE2k&oauth_verifier=Tjob1uocoPRn6XT2c8AdErhI8bmDxO3nGBCKCA" for 127.0.0.1 at 2011-04-21 03:20:44 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"MEmeMqch0ObeDDZRhvDbrVh3N3JtYIqVN16qj2RE2k", "oauth_verifier"=>"Tjob1uocoPRn6XT2c8AdErhI8bmDxO3nGBCKCA", "provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1[0m
+  [1m[35mStatement Load (0.3ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 1) LIMIT 1[0m
+Redirected to http://hell-yeah.dev/statements/1
+Completed 302 Found in 113ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:21:03 -0500
+
+NoMethodError (undefined method `to_sym' for {:name=>"twitter"}:Hash):
+  lib/dev_strategy.rb:6:in `initialize'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:21:45 -0500
+
+NoMethodError (undefined method `to_sym' for {:name=>"twitter"}:Hash):
+  lib/dev_strategy.rb:6:in `initialize'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:21:50 -0500
+
+NoMethodError (undefined method `to_sym' for {:name=>"twitter"}:Hash):
+  lib/dev_strategy.rb:6:in `initialize'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:22:06 -0500
+
+TypeError (can't convert Symbol into Integer):
+  lib/dev_strategy.rb:10:in `request_phase'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:23:00 -0500
+
+TypeError (can't convert Symbol into Integer):
+  lib/dev_strategy.rb:10:in `request_phase'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:23:08 -0500
+
+TypeError (can't convert Symbol into Integer):
+  lib/dev_strategy.rb:10:in `request_phase'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.2ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:23:49 -0500
+
+TypeError (can't convert Symbol into Integer):
+  lib/dev_strategy.rb:10:in `request_phase'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:23:57 -0500
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:24:10 -0500
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:24:56 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:25:02 -0500
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:26:18 -0500
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:26:28 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'drnic' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'drnic') LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('drnic', 'Dr. Nic Williams', '2011-04-21 08:26:30.447322', '2011-04-21 08:26:30.447322')
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" IS NULL LIMIT 1[0m
+  [1m[35mVote Load (0.2ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" IS NULL AND ("votes"."user_id" = 2) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (2, NULL, '2011-04-21 08:26:30.524736', '2011-04-21 08:26:30.524736')[0m
+Redirected to 
+Completed   in 308ms
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/votes_controller.rb:13:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:28:02 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.3ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (37.2ms)
+Rendered statements/index.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 63ms (Views: 50.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 03:28:05 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:28:05 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:28:10 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Redirected to http://hell-yeah.dev/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:28:10 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (71.8ms)
+Rendered statements/index.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 89ms (Views: 78.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 03:28:36 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:28:36 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:28:43 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Redirected to http://hell-yeah.dev/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:28:43 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (118.8ms)
+Rendered statements/index.html.erb within layouts/application (124.6ms)
+Completed 200 OK in 145ms (Views: 128.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:29:19 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.6ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (80.7ms)
+Rendered statements/index.html.erb within layouts/application (84.4ms)
+Completed 200 OK in 105ms (Views: 93.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 03:29:22 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:29:22 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:29:26 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 0ms
+
+RuntimeError ({}):
+  app/controllers/votes_controller.rb:8:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:31:07 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 1ms
+
+RuntimeError ({}):
+  app/controllers/votes_controller.rb:8:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:32:09 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 2ms
+
+RuntimeError ({"REQUEST_METHOD"=>"POST", "PATH_INFO"=>"/auth/twitter/callback", "QUERY_STRING"=>"", "SCRIPT_NAME"=>"", "REMOTE_ADDR"=>"127.0.0.1", "SERVER_ADDR"=>"0.0.0.0", "SERVER_NAME"=>"hell-yeah.dev", "SERVER_PORT"=>"80", "HTTP_HOST"=>"hell-yeah.dev", "HTTP_CONNECTION"=>"keep-alive", "HTTP_REFERER"=>"http://hell-yeah.dev/auth/twitter", "CONTENT_LENGTH"=>"36", "HTTP_CACHE_CONTROL"=>"max-age=0", "HTTP_ORIGIN"=>"http://hell-yeah.dev", "HTTP_USER_AGENT"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/534.29 (KHTML, like Gecko) Chrome/12.0.733.0 Safari/534.29", "CONTENT_TYPE"=>"application/x-www-form-urlencoded", "HTTP_ACCEPT"=>"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "HTTP_ACCEPT_ENCODING"=>"gzip,deflate,sdch", "HTTP_ACCEPT_LANGUAGE"=>"en-US,en;q=0.8", "HTTP_ACCEPT_CHARSET"=>"ISO-8859-1,utf-8;q=0.7,*;q=0.3", "HTTP_COOKIE"=>"_dev_strategy_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFRiIlMzBhZTU2ZDgyOTljYTRlNTkyYzkxZDNiNjdhMjEyMDRJIhBfY3NyZl90b2tlbgY7AEZJIjEzOUNvUFBEYS9zMUVKQWxQMVZmUmNYZll4Z3gwL3VjditKYW9qK2ZXdmZvPQY7AEZJIhZsYXN0X3N0YXRlbWVudF9pZAY7AEZJIgYyBjsAVEkiFG9tbmlhdXRoLm9yaWdpbgY7AEZJIhpodHRwOi8vaGVsbC15ZWFoLmRldi8GOwBU--baccceec30fc213c10c39c887a9eabfa9ae80c9d", "REMOTE_PORT"=>59245, "rack.version"=>[1, 1], "rack.input"=>#<StringIO:0x00000100a28db0>, "rack.errors"=>#<IO:<STDERR>>, "rack.multithread"=>false, "rack.multiprocess"=>true, "rack.run_once"=>false, "rack.url_scheme"=>"http", "action_dispatch.parameter_filter"=>[:password], "action_dispatch.secret_token"=>"8f8281fc32f5e362018cce56c4d5984435685c5f7dc468ede3472fa09f2dd399d71a668413ca23a313c6096a69e41495682429bc6acbfddacbb546eca0fcb0f1", "action_dispatch.show_exceptions"=>true, "action_dispatch.remote_ip"=>127.0.0.1, "rack.session"=>{}, "rack.session.options"=>{:path=>"/", :domain=>nil, :expire_after=>nil, :secure=>false, :httponly=>true, :id=>nil}, "rack.request.cookie_string"=>"_dev_strategy_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFRiIlMzBhZTU2ZDgyOTljYTRlNTkyYzkxZDNiNjdhMjEyMDRJIhBfY3NyZl90b2tlbgY7AEZJIjEzOUNvUFBEYS9zMUVKQWxQMVZmUmNYZll4Z3gwL3VjditKYW9qK2ZXdmZvPQY7AEZJIhZsYXN0X3N0YXRlbWVudF9pZAY7AEZJIgYyBjsAVEkiFG9tbmlhdXRoLm9yaWdpbgY7AEZJIhpodHRwOi8vaGVsbC15ZWFoLmRldi8GOwBU--baccceec30fc213c10c39c887a9eabfa9ae80c9d", "rack.request.cookie_hash"=>{"_dev_strategy_session"=>"BAh7CUkiD3Nlc3Npb25faWQGOgZFRiIlMzBhZTU2ZDgyOTljYTRlNTkyYzkxZDNiNjdhMjEyMDRJIhBfY3NyZl90b2tlbgY7AEZJIjEzOUNvUFBEYS9zMUVKQWxQMVZmUmNYZll4Z3gwL3VjditKYW9qK2ZXdmZvPQY7AEZJIhZsYXN0X3N0YXRlbWVudF9pZAY7AEZJIgYyBjsAVEkiFG9tbmlhdXRoLm9yaWdpbgY7AEZJIhpodHRwOi8vaGVsbC15ZWFoLmRldi8GOwBU--baccceec30fc213c10c39c887a9eabfa9ae80c9d"}, "action_dispatch.cookies"=>{"_dev_strategy_session"=>"BAh7CUkiD3Nlc3Npb25faWQGOgZFRiIlMzBhZTU2ZDgyOTljYTRlNTkyYzkxZDNiNjdhMjEyMDRJIhBfY3NyZl90b2tlbgY7AEZJIjEzOUNvUFBEYS9zMUVKQWxQMVZmUmNYZll4Z3gwL3VjditKYW9qK2ZXdmZvPQY7AEZJIhZsYXN0X3N0YXRlbWVudF9pZAY7AEZJIgYyBjsAVEkiFG9tbmlhdXRoLm9yaWdpbgY7AEZJIhpodHRwOi8vaGVsbC15ZWFoLmRldi8GOwBU--baccceec30fc213c10c39c887a9eabfa9ae80c9d"}, "action_dispatch.request.unsigned_session_cookie"=>{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}, "action_dispatch.request.content_type"=>application/x-www-form-urlencoded, "rack.request.form_input"=>#<StringIO:0x00000100a28db0>, "rack.request.form_hash"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams"}, "rack.request.form_vars"=>"nickname=drnic&name=Dr.+Nic+Williams", "omniauth.strategy"=>#<OmniAuth::Strategies::Dev>, "omniauth.origin"=>"http://hell-yeah.dev/", "rack.request.query_string"=>"", "rack.request.query_hash"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams"}, "omniauth.auth"=>{"uid"=>"drnic", "user_info"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams"}}, "action_dispatch.request.path_parameters"=>{:controller=>"votes", :action=>"create", :provider=>"twitter"}, "action_controller.instance"=>#<VotesController:0x00000100954f10 @action_has_layout=true, @view_context_class=nil, @_headers={"Content-Type"=>"text/html"}, @_status=200, @_response=#<ActionDispatch::Response:0x00000100954d30 @writer=#<Proc:0x00000100954bc8@/Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/http/response.rb:43 (lambda)>, @block=nil, @length=0, @header={}, @status=200, @body=[], @cookie=[], @sending_file=false, @blank=false, @cache_control={}, @etag=nil, @request=#<ActionDispatch::Request:0x00000100954d58 @env={...}, @request_method="POST", @filtered_parameters={"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "controller"=>"votes", "action"=>"create", "provider"=>"twitter"}, @method="POST", @fullpath="/auth/twitter/callback">>, @_request=#<ActionDispatch::Request:0x00000100954d58 @env={...}, @request_method="POST", @filtered_parameters={"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "controller"=>"votes", "action"=>"create", "provider"=>"twitter"}, @method="POST", @fullpath="/auth/twitter/callback">, @_env={...}, @lookup_context=#<ActionView::LookupContext:0x00000100953a98 @details_key=nil, @details={:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml, :haml], :formats=>[:html], :locale=>[:en, :en]}, @skip_default_locale=false, @frozen_formats=false, @view_paths=[/Users/mbleigh/Talks/omniauth_ground_up/hell_yeah/app/views]>, @_action_name="create", @_response_body=nil, @_config={}, @_params={"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "controller"=>"votes", "action"=>"create", "provider"=>"twitter"}>, "action_dispatch.request.request_parameters"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams"}, "action_dispatch.request.query_parameters"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams"}, "action_dispatch.request.parameters"=>{"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "controller"=>"votes", "action"=>"create", "provider"=>"twitter"}, "action_dispatch.request.formats"=>[text/html], "action_dispatch.request.flash_hash"=>nil}):
+  app/controllers/votes_controller.rb:8:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:35:31 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 1ms
+
+RuntimeError ({}):
+  app/controllers/votes_controller.rb:9:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (32.7ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.5ms)
+
+
+Started GET "/auth/twitter/" for 127.0.0.1 at 2011-04-21 03:35:47 -0500
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:35:47 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:35:48 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:35:59 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 1ms
+
+RuntimeError ({}):
+  app/controllers/votes_controller.rb:9:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:37:52 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.8ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (59.3ms)
+Rendered statements/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 259ms (Views: 100.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 03:37:56 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:37:56 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:38:00 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"mbleigh", "name"=>"Michael Bleigh", "provider"=>"twitter"}
+Completed   in 0ms
+
+RuntimeError (http://hell-yeah.dev/):
+  app/controllers/votes_controller.rb:8:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:42:04 -0500
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:42:04 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:42:06 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.8ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (95.9ms)
+Rendered statements/index.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 263ms (Views: 109.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 03:42:10 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:42:10 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2", "omniauth.origin"=>"http://hell-yeah.dev/"}
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:42:14 -0500
+{"session_id"=>"30ae56d8299ca4e592c91d3b67a21204", "_csrf_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "last_statement_id"=>"2"}
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 0ms
+
+RuntimeError ({}):
+  app/controllers/votes_controller.rb:10:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:43:06 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+Completed   in 0ms
+
+RuntimeError (can't modify frozen hash):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:46:10 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'drnic' LIMIT 1
+Completed   in 176ms
+
+RuntimeError (can't modify frozen hash):
+  app/controllers/votes_controller.rb:12:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:46:22 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'drnic' LIMIT 1
+Completed   in 192ms
+
+RuntimeError (can't modify frozen hash):
+  app/controllers/votes_controller.rb:12:in `create'
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.8ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.1ms)
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.4ms)
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:46:41 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"drnic", "name"=>"Dr. Nic Williams", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'drnic' LIMIT 1
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 2 LIMIT 1[0m
+  [1m[35mVote Load (0.2ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 2 AND ("votes"."user_id" = 2) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (2, 2, '2011-04-21 08:46:43.553704', '2011-04-21 08:46:43.553704')[0m
+Redirected to http://hell-yeah.dev/statements/2
+Completed 302 Found in 227ms
+
+
+Started GET "/statements/2" for 127.0.0.1 at 2011-04-21 03:46:43 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+Rendered statements/_statement.html.erb (33.3ms)
+Rendered statements/show.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 89ms (Views: 76.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:46:47 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (72.6ms)
+Rendered statements/index.html.erb within layouts/application (76.4ms)
+Completed 200 OK in 198ms (Views: 187.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/statements/3/votes/new" for 127.0.0.1 at 2011-04-21 03:46:57 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"3"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:46:57 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:47:04 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"kfc", "name"=>"Kentucky Fried Chicken", "provider"=>"twitter"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'kfc' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'kfc') LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('kfc', 'Kentucky Fried Chicken', '2011-04-21 08:47:05.058032', '2011-04-21 08:47:05.058032')
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+  [1m[35mVote Load (0.1ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 3 AND ("votes"."user_id" = 3) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (3, 3, '2011-04-21 08:47:05.104821', '2011-04-21 08:47:05.104821')[0m
+Redirected to http://hell-yeah.dev/statements/3
+Completed 302 Found in 142ms
+
+
+Started GET "/statements/3" for 127.0.0.1 at 2011-04-21 03:47:05 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (64.5ms)
+Rendered statements/show.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 91ms (Views: 76.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:47:08 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (48.6ms)
+Rendered statements/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 69ms (Views: 56.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 03:48:06 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (71.9ms)
+Rendered statements/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 90ms (Views: 78.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/statements/new" for 127.0.0.1 at 2011-04-21 03:48:09 -0500
+  Processing by StatementsController#new as HTML
+Rendered statements/_form.html.erb (10.4ms)
+Rendered statements/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 32ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/statements" for 127.0.0.1 at 2011-04-21 03:48:11 -0500
+  Processing by StatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "statement"=>{"text"=>""}, "commit"=>"Create Statement"}
+  [1m[35mStatement Load (0.1ms)[0m  SELECT "statements"."id" FROM "statements" WHERE ("statements"."text" = '') LIMIT 1
+Rendered statements/_form.html.erb (3.9ms)
+Rendered statements/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 64ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/statements/1/votes/new" for 127.0.0.1 at 2011-04-21 03:48:18 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"1"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:48:18 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:48:24 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"bryanl", "name"=>"Brian Liles", "provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'bryanl' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'bryanl') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('bryanl', 'Brian Liles', '2011-04-21 08:48:24.433140', '2011-04-21 08:48:24.433140')[0m
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 4) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (4, 1, '2011-04-21 08:48:24.520775', '2011-04-21 08:48:24.520775')
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 114ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 03:48:24 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.7ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (91.0ms)
+Rendered statements/index.html.erb within layouts/application (94.6ms)
+Completed 200 OK in 114ms (Views: 98.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/statements/1/votes/new" for 127.0.0.1 at 2011-04-21 03:48:30 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"1"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 03:48:30 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 03:48:34 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"nickname"=>"mbleigh", "name"=>"Michael Bleigh", "provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1[0m
+  [1m[35mStatement Load (0.3ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 1) LIMIT 1[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 115ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 03:48:34 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.5ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (103.8ms)
+Rendered statements/index.html.erb within layouts/application (107.1ms)
+Completed 200 OK in 124ms (Views: 111.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 08:47:21 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (27.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (114.7ms)
+Rendered statements/index.html.erb within layouts/application (131.3ms)
+Completed 200 OK in 340ms (Views: 143.5ms | ActiveRecord: 28.2ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20110421072750)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "screen_name" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110421072750')
+Migrating to CreateStatements (20110421072829)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "statements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110421072829')
+Migrating to CreateVotes (20110421072953)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "statement_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110421072953')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("statements")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("votes")
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 08:47:39 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (41.9ms)
+Rendered statements/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 59ms (Views: 48.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 08:47:42 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+Rendered collection (0.0ms)
+Rendered statements/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/statements/new" for 127.0.0.1 at 2011-04-21 08:48:13 -0500
+  Processing by StatementsController#new as HTML
+Rendered statements/_form.html.erb (43.7ms)
+Rendered statements/new.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 76ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/statements" for 127.0.0.1 at 2011-04-21 09:15:15 -0500
+  Processing by StatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "statement"=>{"text"=>"What would Freddie Mercury do?"}, "commit"=>"Create Statement"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mStatement Load (20.2ms)[0m  SELECT "statements"."id" FROM "statements" WHERE ("statements"."text" = 'What would Freddie Mercury do?') LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "statements" ("text", "created_at", "updated_at") VALUES ('What would Freddie Mercury do?', '2011-04-21 14:15:17.985562', '2011-04-21 14:15:17.985562')[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 249ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 09:15:18 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+Rendered statements/_statement.html.erb (59.9ms)
+Rendered statements/index.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 122ms (Views: 112.1ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/statements/new" for 127.0.0.1 at 2011-04-21 09:15:20 -0500
+  Processing by StatementsController#new as HTML
+Rendered statements/_form.html.erb (56.4ms)
+Rendered statements/new.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 120ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/statements" for 127.0.0.1 at 2011-04-21 09:15:43 -0500
+  Processing by StatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "statement"=>{"text"=>"TATFT"}, "commit"=>"Create Statement"}
+  [1m[35mStatement Load (0.1ms)[0m  SELECT "statements"."id" FROM "statements" WHERE ("statements"."text" = 'TATFT') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "statements" ("text", "created_at", "updated_at") VALUES ('TATFT', '2011-04-21 14:15:43.801746', '2011-04-21 14:15:43.801746')[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 26ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 09:15:43 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.5ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+Rendered statements/_statement.html.erb (31.7ms)
+Rendered statements/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 80ms (Views: 38.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statements/new" for 127.0.0.1 at 2011-04-21 09:15:49 -0500
+  Processing by StatementsController#new as HTML
+Rendered statements/_form.html.erb (5.5ms)
+Rendered statements/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/statements" for 127.0.0.1 at 2011-04-21 09:17:30 -0500
+  Processing by StatementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "statement"=>{"text"=>"wifodiw"}, "commit"=>"Create Statement"}
+  [1m[36mStatement Load (0.1ms)[0m  [1mSELECT "statements"."id" FROM "statements" WHERE ("statements"."text" = 'wifodiw') LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "statements" ("text", "created_at", "updated_at") VALUES ('wifodiw', '2011-04-21 14:17:30.528997', '2011-04-21 14:17:30.528997')
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 21ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 09:17:30 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (63.5ms)
+Rendered statements/index.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 81ms (Views: 70.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 09:17:36 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (86.7ms)
+Rendered statements/index.html.erb within layouts/application (89.9ms)
+Completed 200 OK in 106ms (Views: 94.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/3" for 127.0.0.1 at 2011-04-21 09:17:47 -0500
+
+ActionController::RoutingError (No route matches "/3"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/s3" for 127.0.0.1 at 2011-04-21 09:17:51 -0500
+
+ActionController::RoutingError (No route matches "/s3"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/statements3" for 127.0.0.1 at 2011-04-21 09:17:51 -0500
+
+ActionController::RoutingError (No route matches "/statements3"):
+  
+
+Rendered /Users/mbleigh/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/statements/3" for 127.0.0.1 at 2011-04-21 09:17:52 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (74.4ms)
+Rendered statements/show.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 116ms (Views: 101.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/statements/3/edit" for 127.0.0.1 at 2011-04-21 09:17:55 -0500
+  Processing by StatementsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStatement Load (0.1ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+Rendered statements/_form.html.erb (7.5ms)
+Rendered statements/edit.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 39ms (Views: 26.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/statements/3" for 127.0.0.1 at 2011-04-21 09:18:40 -0500
+  Processing by StatementsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39CoPPDa/s1EJAlP1VfRcXfYxgx0/ucv+Jaoj+fWvfo=", "statement"=>{"text"=>"Talks are hard, let's go shopping!"}, "commit"=>"Update Statement", "id"=>"3"}
+  [1m[35mStatement Load (0.1ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements"."id" FROM "statements" WHERE ("statements"."text" = 'Talks are hard, let''s go shopping!') AND ("statements".id <> 3) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "statements" SET "text" = 'Talks are hard, let''s go shopping!', "updated_at" = '2011-04-21 14:18:40.377329' WHERE "statements"."id" = 3
+Redirected to http://hell-yeah.dev/statements/3
+Completed 302 Found in 54ms
+
+
+Started GET "/statements/3" for 127.0.0.1 at 2011-04-21 09:18:40 -0500
+  Processing by StatementsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStatement Load (0.1ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (26.2ms)
+Rendered statements/show.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 49ms (Views: 37.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 09:18:42 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.6ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (38.4ms)
+Rendered statements/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 58ms (Views: 45.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 10:23:59 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.9ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (48.2ms)
+Rendered statements/index.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 225ms (Views: 62.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/statements/3/votes/new" for 127.0.0.1 at 2011-04-21 10:24:32 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"3"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:24:32 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=dCo33ofzTUSYdYq2gNHMtCNjULUAOwXt2l4JXyV0M&oauth_verifier=cC28Eii0Nnk3ayn0BOp4IYiARlwsONpcmdcnLzJFc40" for 127.0.0.1 at 2011-04-21 10:24:33 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"dCo33ofzTUSYdYq2gNHMtCNjULUAOwXt2l4JXyV0M", "oauth_verifier"=>"cC28Eii0Nnk3ayn0BOp4IYiARlwsONpcmdcnLzJFc40", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'mbleigh') LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('mbleigh', 'Michael Bleigh', '2011-04-21 15:24:33.962292', '2011-04-21 15:24:33.962292')
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+  [1m[35mVote Load (0.1ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 3 AND ("votes"."user_id" = 1) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (1, 3, '2011-04-21 15:24:34.059891', '2011-04-21 15:24:34.059891')[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 169ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:24:34 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.5ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (68.2ms)
+Rendered statements/index.html.erb within layouts/application (71.3ms)
+Completed 200 OK in 86ms (Views: 74.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:24:40 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=tXkQeil3BintVGPYthJgIWE87Hb5s77oai3jE2xgkk&oauth_verifier=0yJulfiVdNaNlYdb0nA2P9bc6vUo5gI3XwYE2Ht7s8w" for 127.0.0.1 at 2011-04-21 10:24:41 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"tXkQeil3BintVGPYthJgIWE87Hb5s77oai3jE2xgkk", "oauth_verifier"=>"0yJulfiVdNaNlYdb0nA2P9bc6vUo5gI3XwYE2Ht7s8w", "provider"=>"twitter"}
+Redirected to http://hell-yeah.dev/
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:24:46 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=aL7TBxH42PptYxl1XLKMhm3I4ZosldlkMwFpoLNhGE&oauth_verifier=568ofHel0CzFq6aqSWOxaG4ImwanpOOZJrBEZZCs" for 127.0.0.1 at 2011-04-21 10:24:47 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"aL7TBxH42PptYxl1XLKMhm3I4ZosldlkMwFpoLNhGE", "oauth_verifier"=>"568ofHel0CzFq6aqSWOxaG4ImwanpOOZJrBEZZCs", "provider"=>"twitter"}
+Redirected to http://hell-yeah.dev/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 10:24:48 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (37.5ms)
+Rendered statements/index.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 55ms (Views: 44.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 10:25:09 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.4ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (39.3ms)
+Rendered statements/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 57ms (Views: 45.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/statements/3/votes/new" for 127.0.0.1 at 2011-04-21 10:25:11 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"3"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 33ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:25:11 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=dHn0K573FfT8Sbp1V3vUnzmsKc14tnV2JJaA9vp9tg&oauth_verifier=yt3z18lT38Y6HV2Qf6tYJUbwDXwLI0wIV9AMq0E" for 127.0.0.1 at 2011-04-21 10:25:12 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"dHn0K573FfT8Sbp1V3vUnzmsKc14tnV2JJaA9vp9tg", "oauth_verifier"=>"yt3z18lT38Y6HV2Qf6tYJUbwDXwLI0wIV9AMq0E", "provider"=>"twitter"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 3 LIMIT 1[0m
+  [1m[35mVote Load (0.2ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 3 AND ("votes"."user_id" = 1) LIMIT 1
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 174ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:25:13 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (84.9ms)
+Rendered statements/index.html.erb within layouts/application (88.4ms)
+Completed 200 OK in 104ms (Views: 92.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/statements/2/votes/new" for 127.0.0.1 at 2011-04-21 10:25:16 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"2"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:25:16 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=T3TRwLo6ykir1QmicL5Tt8gVnc2MKk4RsTsCw2lq2s&oauth_verifier=hv3t66bV4rq6cwHoy1Z08C2qnCmqhI37SB22CS52z4" for 127.0.0.1 at 2011-04-21 10:25:16 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"T3TRwLo6ykir1QmicL5Tt8gVnc2MKk4RsTsCw2lq2s", "oauth_verifier"=>"hv3t66bV4rq6cwHoy1Z08C2qnCmqhI37SB22CS52z4", "provider"=>"twitter"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1[0m
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 2 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 2 AND ("votes"."user_id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (1, 2, '2011-04-21 15:25:17.706992', '2011-04-21 15:25:17.706992')
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 123ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:25:17 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.6ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (97.1ms)
+Rendered statements/index.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 118ms (Views: 104.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/statements/1/votes/new" for 127.0.0.1 at 2011-04-21 10:25:20 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"1"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:25:20 -0500
+
+
+Started GET "/auth/twitter/callback?oauth_token=92P0ru2TDeARMydoxSjGPgfto48fkkgo7XSpNrop48&oauth_verifier=THMANqKZyu0j6aClJMtPJ12pvtCMIpssPjCluNrc" for 127.0.0.1 at 2011-04-21 10:25:21 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"oauth_token"=>"92P0ru2TDeARMydoxSjGPgfto48fkkgo7XSpNrop48", "oauth_verifier"=>"THMANqKZyu0j6aClJMtPJ12pvtCMIpssPjCluNrc", "provider"=>"twitter"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."screen_name" = 'mbleigh' LIMIT 1[0m
+  [1m[35mStatement Load (0.2ms)[0m  SELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1
+  [1m[36mVote Load (0.2ms)[0m  [1mSELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (1, 1, '2011-04-21 15:25:21.944305', '2011-04-21 15:25:21.944305')
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 97ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:25:21 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (43.8ms)
+Rendered statements/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 65ms (Views: 50.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:25:34 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.4ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (38.8ms)
+Rendered statements/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 90ms (Views: 45.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:25:36 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.5ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (37.7ms)
+Rendered statements/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 90ms (Views: 44.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:26:06 -0500
+  Processing by StatementsController#index as HTML
+  [1m[36mStatement Load (0.9ms)[0m  [1mSELECT "statements".* FROM "statements"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))
+Rendered statements/_statement.html.erb (88.4ms)
+Rendered statements/index.html.erb within layouts/application (98.6ms)
+Completed 200 OK in 229ms (Views: 102.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/statements/1/votes/new" for 127.0.0.1 at 2011-04-21 10:26:09 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"1"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:26:09 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 10:26:12 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"screen_name"=>"drnic", "provider"=>"twitter"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'drnic' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'drnic') LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('drnic', 'drnic', '2011-04-21 15:26:12.947379', '2011-04-21 15:26:12.947379')
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1[0m
+  [1m[35mVote Load (0.3ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 2) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (2, 1, '2011-04-21 15:26:13.001390', '2011-04-21 15:26:13.001390')[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 136ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:26:13 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (1.0ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (59.5ms)
+Rendered statements/index.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 81ms (Views: 67.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/statements/1/votes/new" for 127.0.0.1 at 2011-04-21 10:26:18 -0500
+  Processing by VotesController#new as HTML
+  Parameters: {"statement_id"=>"1"}
+Redirected to http://hell-yeah.dev/auth/twitter
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-04-21 10:26:18 -0500
+
+
+Started POST "/auth/twitter/callback" for 127.0.0.1 at 2011-04-21 10:26:21 -0500
+  Processing by VotesController#create as HTML
+  Parameters: {"screen_name"=>"tenderlove", "provider"=>"twitter"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."screen_name" = 'tenderlove' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."screen_name" = 'tenderlove') LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "users" ("screen_name", "name", "created_at", "updated_at") VALUES ('tenderlove', 'tenderlove', '2011-04-21 15:26:21.385239', '2011-04-21 15:26:21.385239')
+  [1m[36mStatement Load (0.2ms)[0m  [1mSELECT "statements".* FROM "statements" WHERE "statements"."id" = 1 LIMIT 1[0m
+  [1m[35mVote Load (0.1ms)[0m  SELECT "votes"."id" FROM "votes" WHERE "votes"."statement_id" = 1 AND ("votes"."user_id" = 3) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "votes" ("user_id", "statement_id", "created_at", "updated_at") VALUES (3, 1, '2011-04-21 15:26:21.459610', '2011-04-21 15:26:21.459610')[0m
+Redirected to http://hell-yeah.dev/statements
+Completed 302 Found in 97ms
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:26:21 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.5ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (70.5ms)
+Rendered statements/index.html.erb within layouts/application (73.6ms)
+Completed 200 OK in 90ms (Views: 77.2ms | ActiveRecord: 2.2ms)
+  [1m[36mVote Load (0.9ms)[0m  [1mSELECT "votes".* FROM "votes"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "votes" WHERE "votes"."id" = 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = 2
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "votes" WHERE "votes"."id" = 3[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = 4
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "votes" WHERE "votes"."id" = 5[0m
+
+
+Started GET "/statements" for 127.0.0.1 at 2011-04-21 10:27:04 -0500
+  Processing by StatementsController#index as HTML
+  [1m[35mStatement Load (0.5ms)[0m  SELECT "statements".* FROM "statements"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 1))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 2))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "votes" ON "users".id = "votes".user_id WHERE (("votes".statement_id = 3))[0m
+Rendered statements/_statement.html.erb (65.6ms)
+Rendered statements/index.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 83ms (Views: 72.2ms | ActiveRecord: 0.9ms)
